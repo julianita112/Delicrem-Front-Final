@@ -13,7 +13,7 @@ import {
 } from "@material-tailwind/react";
 import { PlusIcon, PencilIcon, TrashIcon, EyeIcon } from "@heroicons/react/24/solid";
 import axios from "../../utils/axiosConfig";
-import ClienteCrear from "./ClienteCrear";
+import ClienteCrear from "./clientecrear";
 import Swal from 'sweetalert2';
 
 const Toast = Swal.mixin({
