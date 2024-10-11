@@ -14,7 +14,7 @@ import { PlusIcon, EyeIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect } from "react";
 import axios from "../../utils/axiosConfig";
 import Swal from "sweetalert2";
-import { CrearCompra } from "./crearCompra";
+import { CrearCompra } from "./crearcompra";
 import { ReporteCompras } from "./ReporteCompras"; 
 import { GenerarInforme } from "./GenerarInforme"; 
 
