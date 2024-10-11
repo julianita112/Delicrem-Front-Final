@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 import axios from "../../utils/axiosConfig";
 import { Textarea } from "@material-tailwind/react"; 
 import Swal from 'sweetalert2';
-import { Producir } from "./Producir"; // Importar el nuevo componente
+import { Producir } from "./producir"; // Importar el nuevo componente
 
 const Toast = Swal.mixin({
   toast: true,
