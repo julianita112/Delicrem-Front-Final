@@ -16,8 +16,8 @@ import {
 import { PlusIcon, EyeIcon, PencilIcon } from "@heroicons/react/24/solid";
 import axios from "../../utils/axiosConfig";
 import Swal from 'sweetalert2';
-import { CrearPedido } from './CrearPedido';
-import { EditarPedido } from './EditarPedido';
+import { CrearPedido } from './crearpedido';
+import { EditarPedido } from './editarpedido';
 
 export function Pedidos() {
   const [pedidos, setPedidos] = useState([]);

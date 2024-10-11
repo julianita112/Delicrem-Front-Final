@@ -16,9 +16,9 @@ import {
 import { PlusIcon, EyeIcon, ArrowDownIcon } from "@heroicons/react/24/solid";
 import axios from "../../utils/axiosConfig";
 import Swal from "sweetalert2";
-import { CrearVenta } from './CrearVenta'; 
-import { GenerarInformeVenta } from './GenerarInformeVenta'; 
-import { ReporteVentas } from './ReporteVentas'; 
+import { CrearVenta } from './crearventa'; 
+import { GenerarInformeVenta } from './generarinformeventa'; 
+import { ReporteVentas } from './reporteventas'; 
 
 // Configuración de Toast
 const Toast = Swal.mixin({

@@ -14,8 +14,8 @@ import { PlusIcon, PencilIcon, TrashIcon, EyeIcon } from "@heroicons/react/24/so
 import { useState, useEffect } from "react";
 import axios from "../../utils/axiosConfig";
 import Swal from 'sweetalert2';
-import { CrearFichaTecnica } from './CrearFichaTecnica';
-import { EditarFichaTecnica } from './EditarFichaTecnica';
+import { CrearFichaTecnica } from './crearfichatecnica';
+import { EditarFichaTecnica } from './editarfichatecnica';
 
 
 export function FichasTecnicas() {

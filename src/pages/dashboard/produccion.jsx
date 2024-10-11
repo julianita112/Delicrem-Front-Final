@@ -14,10 +14,10 @@ import {
 import { PlusIcon, EyeIcon, CogIcon, ArrowDownTrayIcon, ArchiveBoxArrowDownIcon, PencilIcon, TrashIcon, XMarkIcon, ClipboardDocumentListIcon } from "@heroicons/react/24/solid";
 import axios from "../../utils/axiosConfig";
 import Swal from 'sweetalert2';
-import OrdenesProducidas from "./OrdenesProducidas";
-import OrdenesInactivas from "./OrdenesInactivas";
-import CrearProduccion from "./CrearProduccion";
-import EditarProduccion from "./EditarProduccion";
+import OrdenesProducidas from "./ordenesproducidas";
+import OrdenesInactivas from "./ordenesinactivas";
+import CrearProduccion from "./crearproduccion";
+import EditarProduccion from "./editarproduccion";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
