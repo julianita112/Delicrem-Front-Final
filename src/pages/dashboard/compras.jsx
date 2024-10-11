@@ -15,8 +15,8 @@ import { useState, useEffect } from "react";
 import axios from "../../utils/axiosConfig";
 import Swal from "sweetalert2";
 import { CrearCompra } from "./crearcompra";
-import { ReporteCompras } from "./ReporteCompras"; 
-import { GenerarInforme } from "./GenerarInforme"; 
+import { ReporteCompras } from "./reportecompras"; 
+import { GenerarInforme } from "./generarinforme"; 
 
 export function Compras() {
   const [compras, setCompras] = useState([]);
