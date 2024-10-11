@@ -85,17 +85,21 @@ const ClienteCrear = ({ selectedCliente, setSelectedCliente, fetchClientes, hand
   };
 
   // Nueva función para verificar si el cliente ya existe
-  const checkClienteExists = async (nombre) => {
-    try {
-      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
-      const clientes = response.data;
+// Nueva función para verificar si el cliente ya existe
+const checkClienteExists = async (nombre, id_cliente) => {
+  try {
+    const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
+    const clientes = response.data;
 
-      return clientes.some(cliente => cliente.nombre.toLowerCase() === nombre.toLowerCase());
-    } catch (error) {
-      console.error("Error fetching clientes:", error);
-      return false; // Si hay un error en la consulta, asumimos que el cliente no existe
-    }
-  };
+    return clientes.some(cliente => 
+      cliente.nombre.toLowerCase() === nombre.toLowerCase() && cliente.id_cliente !== id_cliente
+    );
+  } catch (error) {
+    console.error("Error fetching clientes:", error);
+    return false; // Si hay un error en la consulta, asumimos que el cliente no existe
+  }
+};
+
 
   const handleSave = async () => {
     const isValid = await validateFields(selectedCliente);
@@ -108,14 +112,14 @@ const ClienteCrear = ({ selectedCliente, setSelectedCliente, fetchClientes, hand
     }
 
     // Verifica si el cliente ya existe
-    const exists = await checkClienteExists(selectedCliente.nombre);
-    if (exists) {
-      Toast.fire({
-        icon: "error",
-        title: "El nombre del cliente ya está registrado.",
-      });
-      return;
-    }
+    const exists = await checkClienteExists(selectedCliente.nombre, selectedCliente.id_cliente);
+  if (exists) {
+    Toast.fire({
+      icon: "error",
+      title: "El nombre del cliente ya está registrado.",
+    });
+    return;
+  }
 
     try {
       if (selectedCliente.id_cliente) {
