@@ -56,7 +56,7 @@ export function Clientes() {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/clientes");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
       setClientes(response.data);
       setFilteredClientes(response.data);
     } catch (error) {
@@ -113,7 +113,7 @@ export function Clientes() {
   
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/clientes/${id}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/clientes/${id}`);
         fetchClientes();
         Toast.fire({
           icon: 'success',
@@ -179,7 +179,7 @@ export function Clientes() {
   
     if (result.isConfirmed) {
       try {
-        await axios.patch(`http://localhost:3000/api/clientes/${cliente.id_cliente}/estado`, {
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/clientes/${cliente.id_cliente}/estado`, {
           estado: !cliente.estado,
         });
         fetchClientes();
@@ -200,7 +200,7 @@ export function Clientes() {
   // Ejemplo de función para verificar asociaciones (implementación debe adaptarse a tu lógica)
   const verificarAsociaciones = async (id_cliente) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/clientes/${id_cliente}/verificar-asociaciones`);
+      const response = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/clientes/${id_cliente}/verificar-asociaciones`);
       return response.data.asociado; // Supongamos que devuelve un booleano
     } catch (error) {
       console.error("Error al verificar asociaciones:", error);

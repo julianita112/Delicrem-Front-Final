@@ -53,7 +53,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ventas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
       setVentas(response.data);
     } catch (error) {
       console.error("Error fetching ventas:", error);
@@ -62,7 +62,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
 
   const fetchPedidos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/pedidos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/pedidos");
       setPedidos(response.data);
     } catch (error) {
       console.error("Error fetching pedidos:", error);
@@ -71,7 +71,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
 
   const fetchVentasAsociadas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion/todas_ventas_asociadas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/todas_ventas_asociadas");
       const ventasAsociadas = response.data.map((venta) => venta.numero_venta);
       setVentasAsociadas(ventasAsociadas);
     } catch (error) {
@@ -81,7 +81,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       const productosMap = {};
       response.data.forEach(producto => {
         productosMap[producto.id_producto] = producto.nombre;
@@ -95,7 +95,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
   // Nueva función para obtener el total de productos en producción (id_estado = 2)
   const fetchTotalProductosEnProduccion = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion?estado=2");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion?estado=2");
       const ordenesProduccion = response.data;
 
       // Sumar la cantidad total de productos en todas las órdenes con id_estado = 2
@@ -185,7 +185,7 @@ export function CrearProduccion({ open, handleCreateProductionOpen }) {
     const fechaActual = new Date().toISOString().split('T')[0];
 
     try {
-      await axios.post("http://localhost:3000/api/ordenesproduccion", {
+      await axios.post("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion", {
         numero_orden: numeroOrdenUnico,
         fecha_orden: fechaActual,
         productos: Object.entries(productionDetails).map(([id_producto, detalle]) => ({

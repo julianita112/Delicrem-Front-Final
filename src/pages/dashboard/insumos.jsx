@@ -42,7 +42,7 @@ export function Insumos() {
 
   const fetchInsumos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/insumos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/insumos");
       setInsumos(response.data);
       setFilteredInsumos(response.data);
     } catch (error) {
@@ -52,7 +52,7 @@ export function Insumos() {
 
   const fetchCategorias = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/categorias_insumo");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/categorias_insumo");
       setCategorias(response.data);
     } catch (error) {
       console.error("Error fetching categorias:", error);
@@ -110,7 +110,7 @@ export function Insumos() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/insumos/${insumo.id_insumo}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/insumos/${insumo.id_insumo}`);
         fetchInsumos();
         const Toast = Swal.mixin({
           toast: true,
@@ -172,7 +172,7 @@ export function Insumos() {
       }
   
       if (editMode) {
-        await axios.put(`http://localhost:3000/api/insumos/${selectedInsumo.id_insumo}`, selectedInsumo);
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/insumos/${selectedInsumo.id_insumo}`, selectedInsumo);
         setOpen(false);
         fetchInsumos(); // Refrescar la lista de insumos
         const Toast = Swal.mixin({
@@ -191,7 +191,7 @@ export function Insumos() {
           title: "El Insumo ha sido actualizado correctamente."
         });
       } else {
-        await axios.post("http://localhost:3000/api/insumos", selectedInsumo);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/insumos", selectedInsumo);
         fetchInsumos();
         setOpen(false);
         const Toast = Swal.mixin({
@@ -292,7 +292,7 @@ export function Insumos() {
     if (result.isConfirmed) {
       try {
         if (!estado) { // Solo verificamos si intentamos desactivar el insumo   
-          const fichasResponse = await axios.get(`http://localhost:3000/api/fichastecnicas`);
+          const fichasResponse = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/fichastecnicas`);
           const fichasTecnicas = fichasResponse.data.filter(ficha => ficha.insumos.includes(insumo.id_insumo));
           if (fichasTecnicas.length > 0) {
             Swal.fire({
@@ -308,7 +308,7 @@ export function Insumos() {
         }
   
         // Si no está asociado a ninguna ficha técnica, o si se está activando el insumo, proceder con el cambio de estado
-        await axios.patch(`http://localhost:3000/api/insumos/${insumo.id_insumo}/estado`, {
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/insumos/${insumo.id_insumo}/estado`, {
           estado: estado
         });
   

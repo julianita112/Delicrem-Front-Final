@@ -87,7 +87,7 @@ const ClienteCrear = ({ selectedCliente, setSelectedCliente, fetchClientes, hand
   // Nueva función para verificar si el cliente ya existe
   const checkClienteExists = async (nombre) => {
     try {
-      const response = await axios.get("http://localhost:3000/api/clientes");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
       const clientes = response.data;
 
       return clientes.some(cliente => cliente.nombre.toLowerCase() === nombre.toLowerCase());
@@ -119,13 +119,13 @@ const ClienteCrear = ({ selectedCliente, setSelectedCliente, fetchClientes, hand
 
     try {
       if (selectedCliente.id_cliente) {
-        await axios.put(`http://localhost:3000/api/clientes/${selectedCliente.id_cliente}`, selectedCliente);
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/clientes/${selectedCliente.id_cliente}`, selectedCliente);
         Toast.fire({
           icon: 'success',
           title: 'El cliente ha sido actualizado correctamente.'
         });
       } else {
-        await axios.post("http://localhost:3000/api/clientes", selectedCliente);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/clientes", selectedCliente);
         Toast.fire({
           icon: 'success',
           title: '¡Creación exitosa! El cliente ha sido creado correctamente.'

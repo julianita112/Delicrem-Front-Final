@@ -40,7 +40,7 @@ export function OrdenesInactivas({handleBackToMain}) {
   // Obtener estados desde la API
   const fetchEstados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/estados");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       setEstados(response.data); // Guardar los estados en el state
     } catch (error) {
       console.error("Error fetching estados:", error);
@@ -49,7 +49,7 @@ export function OrdenesInactivas({handleBackToMain}) {
 
   const fetchOrdenesInactivas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion/inactivas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/inactivas");
       setOrdenesInactivas(response.data);
     } catch (error) {
       console.error("Error fetching órdenes inactivas:", error);
@@ -71,7 +71,7 @@ export function OrdenesInactivas({handleBackToMain}) {
 
   const handleActivateOrder = async (idOrden) => {
     try {
-      await axios.patch(`http://localhost:3000/api/ordenesproduccion/${idOrden}/estado`, {
+      await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${idOrden}/estado`, {
         activo: true
       });
       Toast.fire({

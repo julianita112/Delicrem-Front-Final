@@ -85,7 +85,7 @@ export function Ventas() {
     console.log("Intentando entregar la venta con número:", numero_venta); // Log para verificar el número de venta
   
     try {
-      const response = await axios.patch(`http://localhost:3000/api/ventas/${numero_venta}/entregar`);
+      const response = await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/ventas/${numero_venta}/entregar`);
       fetchVentas(); // Actualiza la lista de ventas después de entregar
       Swal.fire({
         icon: 'success',
@@ -105,7 +105,7 @@ export function Ventas() {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ventas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
       setVentas(response.data);
       setFilteredVentas(response.data);
     } catch (error) {
@@ -115,7 +115,7 @@ export function Ventas() {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/clientes");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
       setClientes(response.data);
     } catch (error) {
       console.error("Error fetching clientes:", error);
@@ -124,7 +124,7 @@ export function Ventas() {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       setProductos(response.data);
     } catch (error) {
       console.error("Error fetching productos:", error);
@@ -133,7 +133,7 @@ export function Ventas() {
 
   const fetchPedidos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/pedidos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/pedidos");
       const pedidosPendientes = response.data.filter(pedido => pedido.estado === "Pendiente de Preparación");
       setPedidos(pedidosPendientes);
     } catch (error) {
@@ -143,7 +143,7 @@ export function Ventas() {
 
   const fetchEstados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/estados");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       setEstados(response.data);
     } catch (error) {
       console.error("Error fetching estados:", error);
@@ -223,7 +223,7 @@ export function Ventas() {
     }
 
     try {
-      await axios.patch(`http://localhost:3000/api/ventas/${ventaToCancel}/estado`, { 
+      await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/ventas/${ventaToCancel}/estado`, { 
         id_estado: 5, // Asumiendo que el estado 5 representa "Anulada"
         motivo_anulacion: motivoAnulacion 
       });

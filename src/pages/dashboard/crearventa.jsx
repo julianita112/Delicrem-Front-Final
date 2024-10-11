@@ -45,7 +45,7 @@ export function CrearVenta({ clientes, productos, fetchVentas, onCancel }) {
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/pedidos");
+        const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/pedidos");
         setPedidos(response.data); // Actualiza el estado con los pedidos obtenidos
         setLoadingPedidos(false); // Termina la carga
       } catch (error) {
@@ -299,7 +299,7 @@ export function CrearVenta({ clientes, productos, fetchVentas, onCancel }) {
     };
   
     try {
-      await axios.post("http://localhost:3000/api/ventas", ventaToSave);
+      await axios.post("https://finalbackenddelicrem2.onrender.com/api/ventas", ventaToSave);
       Toast.fire({
         title: "¡Creación exitosa!",
         text: "La venta ha sido creada correctamente.",

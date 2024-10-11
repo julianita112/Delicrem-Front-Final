@@ -64,7 +64,7 @@ export function OrdenesProduccion() {
   // Obtener estados desde la API
   const fetchEstados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/estados");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       setEstados(response.data); // Guardar los estados en el state
     } catch (error) {
       console.error("Error fetching estados:", error);
@@ -74,7 +74,7 @@ export function OrdenesProduccion() {
 
   const fetchOrdenes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion");
       setOrdenes(response.data);
       setFilteredOrdenes(response.data);
     } catch (error) {
@@ -134,7 +134,7 @@ export function OrdenesProduccion() {
 
   const handleProducir = async (idOrden) => {
     try {
-      await axios.post(`http://localhost:3000/api/ordenesproduccion/${idOrden}/producir`);
+      await axios.post(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${idOrden}/producir`);
       Toast.fire({
         icon: 'success',
         title: '¡Orden producida exitosamente!'
@@ -184,7 +184,7 @@ export function OrdenesProduccion() {
 
 
     try {
-      await axios.patch(`http://localhost:3000/api/ordenesproduccion/${ordenToAnular.id_orden}/estado`, {
+      await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${ordenToAnular.id_orden}/estado`, {
         id_estado: 5, // Estado Anulado
         motivo_anulacion: motivoAnulacion,
       });

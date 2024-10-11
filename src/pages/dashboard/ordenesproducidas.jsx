@@ -39,7 +39,7 @@ export function OrdenesProducidas({handleBackToMain}) {
 
   const fetchOrdenesProducidas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion/producidas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/producidas");
       setOrdenesProducidas(response.data);
     } catch (error) {
       console.error("Error fetching órdenes producidas:", error);
@@ -48,7 +48,7 @@ export function OrdenesProducidas({handleBackToMain}) {
 
   const fetchEstados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/estados");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       setEstados(response.data); // Guardar los estados obtenidos
     } catch (error) {
       console.error("Error fetching estados:", error);
@@ -82,7 +82,7 @@ export function OrdenesProducidas({handleBackToMain}) {
 
     if (result.isConfirmed) {
       try {
-        await axios.put(`http://localhost:3000/api/ordenesproduccion/${idOrden}/estado`, {
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${idOrden}/estado`, {
           estado: 'completado',
         });
         Toast.fire({

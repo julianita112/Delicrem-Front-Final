@@ -53,7 +53,7 @@ export function Roles() {
 
   const fetchRoles = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/roles");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/roles");
       setRoles(response.data);
       setFilteredRoles(response.data);
     } catch (error) {
@@ -63,7 +63,7 @@ export function Roles() {
 
   const fetchPermisos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/permisos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/permisos");
       setPermisos(response.data);
     } catch (error) {
       console.error("Error fetching permisos:", error);
@@ -124,7 +124,7 @@ export function Roles() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/roles/${role.id_rol}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/roles/${role.id_rol}`);
         fetchRoles(); 
         Toast.fire({
           icon: "Rol Eliminado",
@@ -196,7 +196,7 @@ export function Roles() {
     if (!validateForm()) return;
     try {
       if (editMode) {
-        await axios.put(`http://localhost:3000/api/roles/${selectedRole.id_rol}`, {
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/roles/${selectedRole.id_rol}`, {
           nombre: selectedRole.nombre,
           permisos: selectedRole.permisosRol,
           estado: selectedRole.estado,
@@ -206,7 +206,7 @@ export function Roles() {
           title: "El Rol ha sido actualizado correctamente."
         });
       } else {
-        await axios.post("http://localhost:3000/api/roles", {
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/roles", {
           nombre: selectedRole.nombre,
           permisos: selectedRole.permisosRol,
           estado: selectedRole.estado,
@@ -300,7 +300,7 @@ export function Roles() {
     if (result.isConfirmed) {
       try {
         if (estado) { 
-          const response = await axios.get(`http://localhost:3000/api/usuarios`);
+          const response = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/usuarios`);
           const usuariosConRol = response.data.filter(usuario => usuario.id_rol === id_rol);
   
           if (usuariosConRol.length > 0) {
@@ -316,7 +316,7 @@ export function Roles() {
           }
         }
   
-        await axios.patch(`http://localhost:3000/api/roles/${id_rol}/estado`, { estado: !estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/roles/${id_rol}/estado`, { estado: !estado });
         fetchRoles();
         Toast.fire({
           icon: 'success',

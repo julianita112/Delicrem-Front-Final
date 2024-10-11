@@ -42,7 +42,7 @@ export function CrearPedido({ clientes, productos, fetchPedidos, onCancel }) {
   useEffect(() => {
     const fetchVentas = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/ventas");
+        const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
         setVentas(response.data); // Actualiza el estado con las ventas obtenidas
         setLoadingVentas(false); // Termina la carga
       } catch (error) {
@@ -283,7 +283,7 @@ const handleDetalleChange = (index, e) => {
     };
 
     try {
-        await axios.post("http://localhost:3000/api/pedidos", pedidoToSave);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/pedidos", pedidoToSave);
         Toast.fire({
             title: '¡Creación exitosa!',
             text: 'El pedido ha sido creado correctamente.',

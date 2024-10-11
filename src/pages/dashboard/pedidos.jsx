@@ -43,7 +43,7 @@ export function Pedidos() {
 
   const fetchEstados = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/estados");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       setEstados(response.data);
     } catch (error) {
       console.error("Error fetching estados:", error);
@@ -52,7 +52,7 @@ export function Pedidos() {
 
   const fetchPedidos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/pedidos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/pedidos");
       setPedidos(response.data);
       setFilteredPedidos(response.data);
     } catch (error) {
@@ -62,7 +62,7 @@ export function Pedidos() {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/clientes");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
       setClientes(response.data);
     } catch (error) {
       console.error("Error fetching clientes:", error);
@@ -71,7 +71,7 @@ export function Pedidos() {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos/activos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos/activos");
       setProductos(response.data);
     } catch (error) {
       console.error("Error fetching productos:", error);
@@ -123,7 +123,7 @@ export function Pedidos() {
 
   const handleUpdateEstado = async () => {
     try {
-      const response = await axios.put(`http://localhost:3000/api/pedidos/${selectedPedido.numero_pedido}/estado`, { estado: selectedEstado });
+      const response = await axios.put(`https://finalbackenddelicrem2.onrender.com/api/pedidos/${selectedPedido.numero_pedido}/estado`, { estado: selectedEstado });
       const updatedPedido = response.data;
 
       setPedidos((prevPedidos) =>
@@ -181,7 +181,7 @@ export function Pedidos() {
     }
   
     try {
-      await axios.patch(`http://localhost:3000/api/pedidos/${pedidoToCancel}/estado`, {
+      await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/pedidos/${pedidoToCancel}/estado`, {
         id_estado: 5, // Anulado
         motivo_anulacion: motivoAnulacion
       });

@@ -218,7 +218,7 @@ const debounceValidate = debounce(async (user) => {
   // Función para verificar si el usuario existe en la tabla principal
   const checkUserExists = async (field, value) => {
     try {
-        const response = await axios.get(`http://localhost:3000/api/usuarios`); // Consulta toda la tabla
+        const response = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/usuarios`); // Consulta toda la tabla
         const userExists = response.data.some(user => user[field] === value); // Verifica si el valor ya existe
         return userExists;
     } catch (error) {
@@ -246,7 +246,7 @@ const debounceValidate = debounce(async (user) => {
     try {
       if (editMode) {
         await axios.put(
-          `http://localhost:3000/api/usuarios/${selectedUser.id_usuario}`,
+          `https://finalbackenddelicrem2.onrender.com/api/usuarios/${selectedUser.id_usuario}`,
           selectedUser
         );
         fetchUsuarios();
@@ -255,7 +255,7 @@ const debounceValidate = debounce(async (user) => {
           title: "El usuario ha sido actualizado correctamente.",
         });
       } else {
-        await axios.post("http://localhost:3000/api/usuarios/registro", selectedUser);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/usuarios/registro", selectedUser);
         fetchUsuarios();
         Toast.fire({
           icon: "success",

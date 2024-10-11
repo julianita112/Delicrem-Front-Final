@@ -218,7 +218,7 @@ const validateField = (name, value) => {
     };
   
     try {
-      await axios.post("http://localhost:3000/api/fichastecnicas", fichaToSave);
+      await axios.post("https://finalbackenddelicrem2.onrender.com/api/fichastecnicas", fichaToSave);
       Toast.fire({
         icon: 'success',
         title: '¡Creación exitosa! La ficha técnica ha sido creada correctamente.'

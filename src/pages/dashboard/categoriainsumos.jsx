@@ -49,7 +49,7 @@ export function CategoriaInsumos() {
 
   const fetchCategorias = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/categorias_insumo");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/categorias_insumo");
       setCategorias(response.data);
       setFilteredCategorias(response.data);
     } catch (error) {
@@ -106,7 +106,7 @@ export function CategoriaInsumos() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/categorias_insumo/${categoria.id_categoria}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/categorias_insumo/${categoria.id_categoria}`);
         fetchCategorias();
         
         Toast.fire({
@@ -184,7 +184,7 @@ export function CategoriaInsumos() {
       if (!validateForm()) return; // Verifica si hay errores antes de guardar
     try {
       if (editMode) {
-        await axios.put(`http://localhost:3000/api/categorias_insumo/${selectedCategoria.id_categoria}`, selectedCategoria);
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/categorias_insumo/${selectedCategoria.id_categoria}`, selectedCategoria);
         setOpen(false);
         fetchCategorias();
         const Toast = Swal.mixin({
@@ -203,7 +203,7 @@ export function CategoriaInsumos() {
           title: "La Categoría de Insumos ha sido actualizada correctamente."
         });
       } else {
-        await axios.post("http://localhost:3000/api/categorias_insumo", selectedCategoria);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/categorias_insumo", selectedCategoria);
         fetchCategorias();
         setOpen(false);
         const Toast = Swal.mixin({
@@ -260,10 +260,10 @@ export function CategoriaInsumos() {
       try {
         if (categoria.estado) { 
          
-          const response = await axios.get(`http://localhost:3000/api/insumos?categoria_id=${categoria.id_categoria}`);
+          const response = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/insumos?categoria_id=${categoria.id_categoria}`);
           const insumosAsociados = response.data;         
         }
-        await axios.patch(`http://localhost:3000/api/categorias_insumo/${categoria.id_categoria}/estado`, { estado: !categoria.estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/categorias_insumo/${categoria.id_categoria}/estado`, { estado: !categoria.estado });
         fetchCategorias();
         Toast.fire({
           icon: 'success',

@@ -60,7 +60,7 @@ export function Usuarios() {
 
   const fetchUsuarios = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/usuarios");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/usuarios");
       const data = response.data;
       setUsuarios(data);
       setFilteredUsuarios(data.filter((usuario) => usuario.id_usuario !== currentUser.id_usuario));
@@ -71,7 +71,7 @@ export function Usuarios() {
 
   const fetchRoles = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/roles");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/roles");
       const data = response.data;
       setRoles(data);
     } catch (error) {
@@ -125,7 +125,7 @@ export function Usuarios() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/usuarios/${user.id_usuario}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/usuarios/${user.id_usuario}`);
         fetchUsuarios();
         Toast.fire({
           icon: "success",
@@ -177,7 +177,7 @@ export function Usuarios() {
     if (result.isConfirmed) {
       try {
   
-        await axios.patch(`http://localhost:3000/api/usuarios/${id_usuario}/estado`, { estado: !estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/usuarios/${id_usuario}/estado`, { estado: !estado });
         fetchUsuarios();
         Toast.fire({
           icon: 'success',

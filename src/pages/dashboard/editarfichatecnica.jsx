@@ -28,7 +28,7 @@ export function EditarFichaTecnica({ handleClose, fetchFichas, ficha, productos,
 // Función para obtener insumos existentes
 const fetchExistingInsumos = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/api/insumos"); // Asegúrate de que esta URL es correcta
+    const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/insumos"); // Asegúrate de que esta URL es correcta
     setExistingInsumos(response.data); // Guarda los insumos existentes
   } catch (error) {
     console.error("Error fetching insumos:", error);
@@ -189,7 +189,7 @@ const fetchExistingInsumos = async () => {
       detallesFichaTecnica: selectedFicha.detallesFichaTecnicat,
     };
     try {
-      await axios.put(`http://localhost:3000/api/fichastecnicas/${selectedFicha.id_ficha}`, fichaToSave);
+      await axios.put(`https://finalbackenddelicrem2.onrender.com/api/fichastecnicas/${selectedFicha.id_ficha}`, fichaToSave);
       Toast.fire({
         icon: 'success',
         title: 'La ficha técnica ha sido actualizada correctamente.'

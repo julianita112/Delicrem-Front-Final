@@ -28,7 +28,7 @@ export function GenerarInformeVenta({ onCancel }) {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ventas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
       setVentas(response.data);
     } catch (error) {
       console.error("Error fetching ventas:", error);
@@ -37,7 +37,7 @@ export function GenerarInformeVenta({ onCancel }) {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       setProductos(response.data);
     } catch (error) {
       console.error("Error fetching productos:", error);
@@ -46,7 +46,7 @@ export function GenerarInformeVenta({ onCancel }) {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/clientes");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/clientes");
       setClientes(response.data);
     } catch (error) {
       console.error("Error fetching clientes:", error);

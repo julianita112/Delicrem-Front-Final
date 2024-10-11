@@ -33,7 +33,7 @@ export function Producir({ open, handleProductionOpen, productosActivos }) {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ventas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
       const ventasFiltradas = response.data.filter(
         (v) => v.activo && v.estado === "en preparación"
       );
@@ -45,7 +45,7 @@ export function Producir({ open, handleProductionOpen, productosActivos }) {
 
   const fetchPedidos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/pedidos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/pedidos");
       setPedidos(response.data);
     } catch (error) {
       console.error("Error fetching pedidos:", error);
@@ -117,7 +117,7 @@ export function Producir({ open, handleProductionOpen, productosActivos }) {
 
   const handleProductionSave = async () => {
     try {
-      await axios.post("http://localhost:3000/api/productos/producir", {
+      await axios.post("https://finalbackenddelicrem2.onrender.com/api/productos/producir", {
         productosProduccion: productionDetails,
       });
       Swal.fire({

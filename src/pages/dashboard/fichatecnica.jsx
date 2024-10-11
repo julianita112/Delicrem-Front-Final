@@ -46,7 +46,7 @@ export function FichasTecnicas() {
 
   const fetchFichas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/fichastecnicas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/fichastecnicas");
       setFichas(response.data);
       setFilteredFichas(response.data);
     } catch (error) {
@@ -57,7 +57,7 @@ export function FichasTecnicas() {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       setProductos(response.data);
     } catch (error) {
       console.error("Error fetching productos:", error);
@@ -67,7 +67,7 @@ export function FichasTecnicas() {
 
   const fetchInsumos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/insumos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/insumos");
       setInsumos(response.data);
     } catch (error) {
       console.error("Error fetching insumos:", error);
@@ -122,7 +122,7 @@ export function FichasTecnicas() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/fichastecnicas/${ficha.id_ficha}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/fichastecnicas/${ficha.id_ficha}`);
         fetchFichas();
         Toast.fire({
           icon: "success",
@@ -164,7 +164,7 @@ export function FichasTecnicas() {
   
       // Si el usuario confirma la acción
       if (result.isConfirmed) {
-        await axios.patch(`http://localhost:3000/api/fichastecnicas/${id_ficha}/estado`, { estado: !estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/fichastecnicas/${id_ficha}/estado`, { estado: !estado });
         fetchFichas();
         Toast.fire({
           icon: 'success',

@@ -63,7 +63,7 @@ export function Compras() {
 
   const fetchCompras = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/compras");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/compras");
       setCompras(response.data);
       setFilteredCompras(response.data);
     } catch (error) {
@@ -77,7 +77,7 @@ export function Compras() {
 
   const fetchProveedores = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/proveedores");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/proveedores");
       setProveedores(response.data);
     } catch (error) {
       console.error("Error fetching proveedores:", error);
@@ -86,7 +86,7 @@ export function Compras() {
 
   const fetchInsumos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/insumos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/insumos");
       setInsumos(response.data);
     } catch (error) {
       console.error("Error fetching insumos:", error);
@@ -159,7 +159,7 @@ export function Compras() {
 
     try {
       // Cambiar el id_estado a 5, que representa "Anulado"
-      await axios.patch(`http://localhost:3000/api/compras/${compraToCancel}/estado`, { 
+      await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/compras/${compraToCancel}/estado`, { 
         id_estado: 5, 
         motivo_anulacion: motivoAnulacion 
       });

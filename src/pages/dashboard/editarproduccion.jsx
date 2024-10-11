@@ -53,7 +53,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
 
   const fetchVentas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ventas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
       setVentas(response.data);
     } catch (error) {
       console.error("Error fetching ventas:", error);
@@ -62,7 +62,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       const productosMap = {};
       response.data.forEach(producto => {
         productosMap[producto.id_producto] = producto.nombre;
@@ -75,7 +75,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
 
   const fetchTotalProductosEnProduccion = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion?estado=2");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion?estado=2");
       const ordenesProduccion = response.data;
 
       const totalProductos = ordenesProduccion.reduce((total, orden) => {
@@ -94,7 +94,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
 
   const fetchVentasAsociadas = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/ordenesproduccion/todas_ventas_asociadas");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/todas_ventas_asociadas");
       const ventasAsociadas = response.data.map(venta => venta.numero_venta);
       setVentasAsociadas(ventasAsociadas);
     } catch (error) {
@@ -104,7 +104,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
 
   const loadOrderDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/ordenesproduccion/${orden.id_orden}/ventas_asociadas`);
+      const response = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${orden.id_orden}/ventas_asociadas`);
       const ventasAsociadas = response.data.map(venta => venta.numero_venta);
       setSelectedVentas(ventasAsociadas);
       setVentasAsociadasActuales(ventasAsociadas);
@@ -209,7 +209,7 @@ export function EditarProduccion({ open, handleEditProductionOpen, orden }) {
     };
 
     try {
-      await axios.put(`http://localhost:3000/api/ordenesproduccion/${orden.id_orden}`, updatedOrder);
+      await axios.put(`https://finalbackenddelicrem2.onrender.com/api/ordenesproduccion/${orden.id_orden}`, updatedOrder);
       Swal.fire({
         icon: "success",
         title: "Orden de producción actualizada correctamente",

@@ -24,7 +24,7 @@ export function GenerarInforme({ onCancel }) { // onCancel para manejar el botó
 
   const fetchInsumos = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/insumos');
+      const response = await axios.get('https://finalbackenddelicrem2.onrender.com/api/insumos');
       setInsumos(response.data);
     } catch (error) {
       console.error("Error fetching insumos:", error);
@@ -80,7 +80,7 @@ export function GenerarInforme({ onCancel }) { // onCancel para manejar el botó
     }
 
     try {
-      const response = await axios.get('http://localhost:3000/api/compras'); // Obtener todas las compras
+      const response = await axios.get('https://finalbackenddelicrem2.onrender.com/api/compras'); // Obtener todas las compras
       const compras = response.data;
 
       // Filtrar por rango de fechas

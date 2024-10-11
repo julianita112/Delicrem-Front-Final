@@ -122,7 +122,7 @@ export function CrearCompra({ handleClose, fetchCompras, proveedores, insumos })
     };
 
     try {
-      await axios.post("http://localhost:3000/api/compras", compraToSave);
+      await axios.post("https://finalbackenddelicrem2.onrender.com/api/compras", compraToSave);
       Toast.fire({
         icon: "success",
         title: "¡Creación exitosa! La compra ha sido creada correctamente.",

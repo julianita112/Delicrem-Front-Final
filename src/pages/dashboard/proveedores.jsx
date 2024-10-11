@@ -59,7 +59,7 @@ export function Proveedores() {
 
   const fetchProveedores = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/proveedores");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/proveedores");
       setProveedores(response.data);
       setFilteredProveedores(response.data);
     } catch (error) {
@@ -127,7 +127,7 @@ export function Proveedores() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/proveedores/${proveedor.id_proveedor}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/proveedores/${proveedor.id_proveedor}`);
         fetchProveedores(); // Refrescar la lista de proveedores
         Toast.fire({
           icon: "success",
@@ -167,13 +167,13 @@ export function Proveedores() {
     if (validateForm()) {
       try {
         if (editMode) {
-          await axios.put(`http://localhost:3000/api/proveedores/${selectedProveedor.id_proveedor}`, selectedProveedor);
+          await axios.put(`https://finalbackenddelicrem2.onrender.com/api/proveedores/${selectedProveedor.id_proveedor}`, selectedProveedor);
           Toast.fire({
             icon: 'success',
             title: 'El proveedor ha sido actualizado correctamente.'
           });
         } else {
-          await axios.post("http://localhost:3000/api/proveedores", selectedProveedor);
+          await axios.post("https://finalbackenddelicrem2.onrender.com/api/proveedores", selectedProveedor);
           Toast.fire({
             icon: 'success',
             title: '¡Creación exitosa! El Proveedor creado exitosamente.'
@@ -328,7 +328,7 @@ export function Proveedores() {
     if (result.isConfirmed) {
       try {
         // Realizar la solicitud para cambiar el estado del proveedor
-        await axios.patch(`http://localhost:3000/api/proveedores/${id_proveedor}/estado`, { estado: !estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/proveedores/${id_proveedor}/estado`, { estado: !estado });
         fetchProveedores(); 
         Toast.fire({
           icon: 'success',

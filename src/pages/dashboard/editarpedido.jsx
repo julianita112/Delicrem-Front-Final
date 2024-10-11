@@ -36,7 +36,7 @@ export function EditarPedido({ pedido, clientes = [], productos = [], fetchPedid
   useEffect(() => {
     const fetchVentas = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/ventas");
+        const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/ventas");
         setVentas(response.data);
         setLoadingVentas(false);
       } catch (error) {
@@ -296,7 +296,7 @@ export function EditarPedido({ pedido, clientes = [], productos = [], fetchPedid
     
   
     try {
-      await axios.put(`http://localhost:3000/api/pedidos/${selectedPedido.id_pedido}`, pedidoToSave);
+      await axios.put(`https://finalbackenddelicrem2.onrender.com/api/pedidos/${selectedPedido.id_pedido}`, pedidoToSave);
       Swal.fire({
           toast: true,
           position: 'top-end',

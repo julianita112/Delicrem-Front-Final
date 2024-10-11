@@ -54,7 +54,7 @@ export function ProductoTerminado() {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos");
       setProductos(response.data);
       setFilteredProductos(response.data);
     } catch (error) {
@@ -64,7 +64,7 @@ export function ProductoTerminado() {
 
   const fetchProductosActivos = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/productos/activos");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/productos/activos");
       setProductosActivos(response.data);
     } catch (error) {
       console.error("Error fetching productos activos:", error);
@@ -115,13 +115,13 @@ export function ProductoTerminado() {
     if (!validateForm()) return; // Verifica si hay errores antes de guardar
     try {
       if (editMode) {
-        await axios.put(`http://localhost:3000/api/productos/${selectedProducto.id_producto}`, selectedProducto);
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/productos/${selectedProducto.id_producto}`, selectedProducto);
         Toast.fire({
           icon: 'success',
           title: 'El producto ha sido actualizado correctamente.'
         });
       } else {
-        await axios.post("http://localhost:3000/api/productos", selectedProducto);
+        await axios.post("https://finalbackenddelicrem2.onrender.com/api/productos", selectedProducto);
         Toast.fire({
           icon: 'success',
           title: '¡Creación exitosa! El producto ha sido creado correctamente.'
@@ -218,7 +218,7 @@ export function ProductoTerminado() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/api/productos/${producto.id_producto}`);
+        await axios.delete(`https://finalbackenddelicrem2.onrender.com/api/productos/${producto.id_producto}`);
         fetchProductos();
         Toast.fire({
           icon: 'success',
@@ -269,10 +269,10 @@ export function ProductoTerminado() {
     if (result.isConfirmed) {
       try {
         // Verificar si hay productos asignados a una orden de producción
-        const ordenesResponse = await axios.get(`http://localhost:3000/api/ordenesProduccion`);
+        const ordenesResponse = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/ordenesProduccion`);
         const productosConOrden = ordenesResponse.data.filter(orden => orden.id_producto === id_producto);
         // Verificar si hay productos asignados a una venta
-        const ventasResponse = await axios.get(`http://localhost:3000/api/ventas`);
+        const ventasResponse = await axios.get(`https://finalbackenddelicrem2.onrender.com/api/ventas`);
         const productosConVenta = ventasResponse.data.filter(venta => venta.id_producto === id_producto);
   
         if (productosConOrden.length > 0 || productosConVenta.length > 0) {
@@ -287,7 +287,7 @@ export function ProductoTerminado() {
           return;
         }
   
-        await axios.patch(`http://localhost:3000/api/productos/${id_producto}/estado`, { estado: !estado });
+        await axios.patch(`https://finalbackenddelicrem2.onrender.com/api/productos/${id_producto}/estado`, { estado: !estado });
         fetchProductos();
         fetchProductosActivos();
         const Toast = Swal.mixin({

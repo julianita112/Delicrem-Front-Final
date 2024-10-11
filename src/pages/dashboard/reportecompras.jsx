@@ -6,11 +6,11 @@ import Swal from "sweetalert2";
 export function ReporteCompras() {
   const generarReporte = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/compras");
+      const response = await axios.get("https://finalbackenddelicrem2.onrender.com/api/compras");
       const compras = response.data;
 
       // Obtener la lista de estados
-      const estadosResponse = await axios.get("http://localhost:3000/api/estados");
+      const estadosResponse = await axios.get("https://finalbackenddelicrem2.onrender.com/api/estados");
       const estados = estadosResponse.data;
 
       // Crear un diccionario de estados para mapear id_estado con nombre_estado

@@ -24,7 +24,7 @@ export function ResetPassword() {
     console.log("Sending email to:", email);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/usuarios/recuperar_contrasena", { email });
+      const response = await axios.post("https://finalbackenddelicrem2.onrender.com/api/usuarios/recuperar_contrasena", { email });
       console.log("Email sent response:", response);
 
       if (response.status === 200) {
@@ -47,7 +47,7 @@ export function ResetPassword() {
     console.log("Attempting password reset with payload:", payload);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/usuarios/cambiar_contrasena", payload);
+      const response = await axios.post("https://finalbackenddelicrem2.onrender.com/api/usuarios/cambiar_contrasena", payload);
 
       console.log("Password reset response:", response);
 
