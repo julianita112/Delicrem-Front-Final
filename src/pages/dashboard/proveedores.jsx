@@ -29,6 +29,7 @@ const Toast = Swal.mixin({
   }
 });
 
+
 export function Proveedores() {
   const [proveedores, setProveedores] = useState([]);
   const [filteredProveedores, setFilteredProveedores] = useState([]);
