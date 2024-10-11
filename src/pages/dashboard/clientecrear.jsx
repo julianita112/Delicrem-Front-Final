@@ -119,7 +119,7 @@ const ClienteCrear = ({ selectedCliente, setSelectedCliente, fetchClientes, hand
 
     try {
       if (selectedCliente.id_cliente) {
-        await axios.put(`https://finalbackenddelicrem2.onrender.com/clientes/${selectedCliente.id_cliente}`, selectedCliente);
+        await axios.put(`https://finalbackenddelicrem2.onrender.com/api/clientes/${selectedCliente.id_cliente}`, selectedCliente);
         Toast.fire({
           icon: 'success',
           title: 'El cliente ha sido actualizado correctamente.'
