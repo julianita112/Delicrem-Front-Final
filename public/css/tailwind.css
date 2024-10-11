@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 15s ease-in-out infinite;
+  }
+  
+
+  .btnagregar {
+    background: linear-gradient(145deg, #255b47, #6aa858);
+    margin-bottom: 20px; /* Ajusta el valor según tus necesidades */
+    text-transform: none;
+    font-size: 17px; /* Puedes ajustar el valor a tu preferencia */
+}
+
+.btnagregar:hover {
+    background: linear-gradient(145deg, #6b9561, #426449);
+}
+
+.btnagregarm {
+  text-transform: none;
+  background: linear-gradient(145deg, #255b47, #6aa858) ;
+  color: white;
+  
+
+}
+
+.btnagregarm:hover {
+  background: linear-gradient(145deg, #6b9561, #426449);
+}
+
+.btnedit {
+  background: linear-gradient(145deg, #248891, #73bac1);
+  margin-bottom: 4px; 
+}
+
+.btnedit:hover {
+  background: linear-gradient(145deg, #7ebaba, #248891);
+}
+
+.cancelar {
+  background: linear-gradient(145deg,#af040af2, #f30008f2);
+  color: white; /* Color del texto */
+  margin-right: 20px; /* Ajusta el valor según tus necesidades */
+}
+
+.cancelar:hover {
+  background: linear-gradient(145deg, #f30008f2, #c90209f2);
+}
+
+.cancelarinformes {
+  background: linear-gradient(145deg,#080202f2, #212121f2);
+  color: white; /* Color del texto */
+  text-transform: none;
+  margin-right: 20px; /* Ajusta el valor según tus necesidades */
+}
+
+.cancelarinformes:hover {
+  background: linear-gradient(145deg, #212121f2, #080202f2);
+}
+
+.btncancelarm {
+  background: linear-gradient(145deg, #af040af2, #f30008f2);
+  color: white;
+  text-transform: none;
+  margin-right: 10px; /* Ajusta el valor según el espacio deseado */
+}
+
+.btncancelarm:hover {
+  background: linear-gradient(145deg,  #f30008f2, #c90209f2);
+}
+
+
+.btncancelarinsumo {
+  background: linear-gradient(145deg, #af040af2, #f30008f2);
+  color: white;
+/* Ajusta el valor según el espacio deseado */
+}
+
+.btncancelarinsumo:hover {
+  background: linear-gradient(145deg,  #f30008f2, #c90209f2);
+}
+
+
+
+
+.btncancelarinsumom {
+  background: linear-gradient(145deg, #af040af2, #f30008f2);
+  color: white;
+  margin-top: -0.99rem;
+  margin-right: 10px;
+/* Ajusta el valor según el espacio deseado */
+}
+
+.btncancelarinsumom:hover {
+  background: linear-gradient(145deg,  #f30008f2, #c90209f2);
+}
+
+.btnvisualizar {
+  background: linear-gradient(145deg, #000000f2, #555454);
+  margin-bottom: 20px; /* Ajusta el valor según tus necesidades */
+  margin-bottom: 4px; 
+}
+
+.btnvisualizar:hover {
+  background: linear-gradient(145deg,  #494848, #000000f2);
+}
+/* Clases personalizadas para ajustar el tamaño del modal */
+.custom-modal {
+  width: 40vw !important; /* Ajusta el ancho del modal según necesites */
+  height: auto !important; /* Altura automática según el contenido */
+  max-width: 500px !important; /* Ancho máximo */
+  max-height: 80vh !important; /* Altura máxima para prevenir desbordamiento */
+  background-color: white !important; /* Fondo blanco */
+  padding: 1rem !important; /* Relleno interno */
+  border-radius: 1rem !important; /* Esquinas redondeadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; /* Sombra */
+  overflow: hidden; /* Evitar desbordamiento */
+  z-index: 999 !important; /* Ajustar el z-index */
+  color:#000 !important;
+}
+
+.custom-modal .dialog-footer {
+  justify-content: flex-end !important; /* Alinea los botones hacia el final */
+}
+
+.custom-input {
+  width: 100% !important; /* Ancho completo */
+  padding: 0.75rem !important; /* Relleno interno */
+  border: 1px solid #e5e7eb !important; /* Color del borde */
+  border-radius: 0.375rem !important; /* Esquinas redondeadas */
+  background-color: #f9fafb !important; /* Fondo claro */
+  transition: border-color 0.2s !important; /* Transición suave */
+}
+
+.custom-input:focus {
+  outline: none !important; /* Sin outline */
+}
+
+.input-error {
+  border-color: #dc3545 !important; /* Color del borde en error */
+}
+
+/* Agregar z-index a SweetAlert */
+.swal2-container {
+  z-index: 10000 !important; /* Ajustar el z-index */
+}
+
+
+/* Estilo para el modal de detalles */
+.details-modal {
+  width: 40vw !important; /* 10% del viewport width */
+  height: 70vh !important; /* 55% del viewport height */
+  max-width: 500px !important; /* Ancho máximo */
+  max-height: 1000px !important; /* Alto máximo */
+  background-color: white !important; /* Fondo blanco */
+  padding: 1rem !important; /* Relleno interno */
+  border-radius: 1rem !important; /* Esquinas redondeadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; /* Sombra */
+}
+
+/* Estilo para la tabla dentro del modal de detalles */
+.details-modal table {
+  width: 100% !important; /* Ancho completo */
+  border-collapse: collapse !important; /* Colapso de bordes de la tabla */
+}
+
+/* Estilo para las celdas de la tabla dentro del modal de detalles */
+.details-modal td,
+.details-modal th {
+  padding: 0.75rem !important; /* Relleno de celdas */
+  border-bottom: 1px solid #12365d !important; /* Borde inferior */
+  text-align: left !important; /* Alineación de texto */
+
+}
+
+/* Estilo para las cabeceras de la tabla dentro del modal de detalles */
+.details-modal th {
+  background-color: #000000 !important; /* Fondo de cabecera */
+  font-weight: bold !important; /* Fuente en negrita */
+}
+
+
+/* tailwind.css */
+
+.pagination {
+  @apply inline-block px-3 py-2 mx-1 border border-gray-300 bg-white text-gray-700 rounded-md text-sm transition-colors duration-300 ease-in-out;
+  font-size: 0.875rem; /* Aumenta el tamaño del texto */
+}
+
+.pagination:hover {
+  @apply bg-pink-800 text-white; /* Cambia el fondo a fucsia 800 y el texto a blanco */
+}
+
+.page-active {
+  @apply bg-black text-white hover:bg-blue-600;
+}
+
+
+
+/* Añadir esto a tu archivo CSS */
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-label input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: none;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 10px;
+  font-size: 12px;
+  color: #000;
+}
+
+.swal-container {
+  z-index: 9999;
+}
+
+/* En tu archivo CSS */
+.custom-calendar {
+  width: 50%; /* Ajusta el ancho al 100% del contenedor padre */
+  max-width: 300px; /* Ajusta el tamaño máximo del calendario */
+  margin: 0 auto; /* Centra el calendario horizontalmente */
+}
+
+.custom-calendar .highlight {
+  background-color: #90ee90; /* Color de fondo para los días destacados */
+  color: white; /* Color del texto */
+  border-radius: 50%; /* Hace que el fondo sea circular */
+}
+
+/* Estilo personalizado para el input */
+.input-custom {
+  border: 1px solid #d1d5db !important; /* Color del borde */
+  border-radius: 0.375rem !important; /* Radio del borde */
+  padding: 0.5rem !important; /* Espaciado interno */
+  outline: none !important; /* Elimina el borde de enfoque */
+  box-shadow: none !important; /* Elimina cualquier sombra */
+}
+
+/* Estilo para el enfoque del input */
+.input-custom:focus {
+  border-color: #3b82f6 !important; /* Color del borde al hacer foco */
+  box-shadow: none !important; /* Elimina la sombra al hacer foco */
+}
+  
+
+.custom-align {
+
+  margin-left: -40px; /* Ajusta el valor según sea necesario */
+}
